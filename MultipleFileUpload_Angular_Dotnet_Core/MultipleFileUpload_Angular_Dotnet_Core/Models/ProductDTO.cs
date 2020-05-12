@@ -9,7 +9,7 @@ namespace MultipleFileUpload_Angular_Dotnet_Core.Models
     public class ProductDTO
     {
         public string ProductName { get; set; }
-        public ProductTypeDTO ProductTypes { get; set; }
+        public List<ProductTypeDTO> ProductTypes { get; set; }
 
     }
 }

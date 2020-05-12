@@ -8,13 +8,11 @@ namespace MultipleFileUpload_Angular_Dotnet_Core.Models
 {
     public class ProductTypeDTO
     {
-        public string ProductDescriptionName { get; set; }
+        public string Description { get; set; }
         public string Volume { get; set; }
 
         //public ICollection<MyFiles> ProductImages { get; set; }
-        public List<IFormFile> ProductImages { get; set; }
-
-
+        //public List<IFormFile> ProductImages { get; set; }
     }
 
     public class MyFiles
