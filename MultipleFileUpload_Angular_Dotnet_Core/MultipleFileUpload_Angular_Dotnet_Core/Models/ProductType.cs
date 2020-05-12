@@ -12,13 +12,13 @@ namespace MultipleFileUpload_Angular_Dotnet_Core.Models
         public string Volume { get; set; }
 
         //public ICollection<MyFiles> ProductImages { get; set; }
-        //public List<IFormFile> ProductImages { get; set; }
+        public List<MyFiles> ProductImages { get; set; }
     }
 
     public class MyFiles
     {
 
-        public ICollection<IFormFile> Files { get; set; }
+        public IFormFile File { get; set; }
 
     }
 }
