@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +11,12 @@ namespace MultipleFileUpload_Angular_Dotnet_Core.Models
     {
         public string Description { get; set; }
         public string Volume { get; set; }
-
-        //public ICollection<MyFiles> ProductImages { get; set; }
-        public List<MyFiles> ProductImages { get; set; }
+        public IEnumerable<AdritaFile> ProductImages { get; set; }
+        public AdritaFile SingleImage { get; set; }
     }
 
-    public class MyFiles
+    public class AdritaFile
     {
-
         public IFormFile File { get; set; }
-
     }
 }
