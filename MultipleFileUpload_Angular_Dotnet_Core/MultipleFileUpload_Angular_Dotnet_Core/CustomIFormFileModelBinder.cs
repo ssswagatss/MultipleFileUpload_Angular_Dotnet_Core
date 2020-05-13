@@ -18,13 +18,13 @@ namespace MultipleFileUpload_Angular_Dotnet_Core
             if (bindingContext.ModelType != typeof(IEnumerable<AdritaFile>) && bindingContext.ModelType != typeof(AdritaFile))
                 throw new ArgumentNullException(nameof(bindingContext));
 
-            var modelName = bindingContext.ModelName;
+            var modelName = bindingContext.ModelName.Replace(".","][").Replace("[[","[").Replace("]]","]");
             if (bindingContext.ModelType == typeof(IEnumerable<AdritaFile>))
             {
                 if (bindingContext.HttpContext.Request.Form.Files.Any())
                 {
                     var files = new List<AdritaFile>();
-                    foreach (var f in bindingContext.HttpContext.Request.Form.Files.Where(x => x.Name.StartsWith(modelName)))
+                    foreach (var f in bindingContext.HttpContext.Request.Form.Files.Where(x => x.Name.Replace(".", "][").Replace("[[", "[").Replace("]]", "]").StartsWith(modelName)))
                     {
                         var file = new AdritaFile
                         {
